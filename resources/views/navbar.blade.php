@@ -25,7 +25,12 @@
                         Dropdown
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ url('/author') }}">Add Author</a>
+                        @if (Auth::user()->role == 'admin')
+                            <a class="dropdown-item" href="{{ url('/author') }}">Add Author</a>
+                        @endif
+                        <a class="dropdown-item" href="{{ url('/author') }}">Logout</a>
+
+                        <div />
                 </li>
             </ul>
             {{-- <form class="form-inline my-2 my-lg-0">
