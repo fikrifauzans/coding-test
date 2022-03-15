@@ -25,5 +25,8 @@ Route::post('/author/update', [UserController::class, 'update']);
 Route::get('/author/update/{user:id}', [UserController::class, 'updateForm']);
 Route::get('/post', [PostController::class, 'show']);
 Route::post('/post/create', [PostController::class, 'create']);
+Route::post('/post/update', [PostController::class, 'updatePost']);
+Route::get('/post/update/{post:id}', [PostController::class, 'showUpdate']);
+Route::post('/post/delete', [PostController::class, 'destroy']);
 Route::get('/login', [LoginController::class, 'loginView']);
 Route::post('/login', [LoginController::class, 'login']);

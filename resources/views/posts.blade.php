@@ -12,7 +12,20 @@
                     <footer class="blockquote-footer">Author: {{ $p->username }}
                         on {{ $p->created_at->diffforhumans() }}
                     </footer>
+                    <div class="row ml-1">
 
+                        <div>
+                            <form action="{{ url('post/update/' . $p->id) }}" method="get">
+                                <button type="submit" class="btn btn-warning mt-2 "><small>update</small></button>
+                            </form>
+                        </div>
+                        <div>
+                            <form action="{{ url('post/delete') }}" method="POST">@csrf
+                                <input type="hidden" value="{{ $p->id }}" name="id">
+                                <button class="btn btn-danger mt-2 ml-1"><small>delete</small></button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         @endforeach

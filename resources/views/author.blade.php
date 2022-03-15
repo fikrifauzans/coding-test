@@ -23,7 +23,7 @@
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->role }}</td>
                     <td>
-                        <form action="{{ url('author/destroy') }}" method="post">
+                        <form action="{{ url('author/destroy') }}" method="post">@csrf
                             <input type="hidden" value="{{ $user->id }}" name="id">
                             <button type="submit" class="btn btn-danger"><small>delete</small></button>
                         </form>
@@ -32,9 +32,10 @@
                         </form>
                     </td>
 
+
                 </tr>
             @endforeach
-
+            <div class="row justify-content-center"></div>
 
         </tbody>
     </table>

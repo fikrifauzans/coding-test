@@ -10,7 +10,7 @@ class UserController extends Controller
     //
     public function show()
     {
-        $users = User::latest()->get();
+        $users = User::latest()->paginate(5);
 
         return view('author', compact('users'));
     }
@@ -35,6 +35,9 @@ class UserController extends Controller
 
     public function destroy(Request $request)
     {
+
+        // dd($request['id']);
+
         User::find($request['id'])->delete();
         return redirect()->back();
     }
