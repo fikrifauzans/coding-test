@@ -2,7 +2,7 @@
 @section('content')
     <form class="my-5" action="{{ url('post/update') }}" method="post">@csrf
         <div class="form-group">
-            <input type="hidden" value="{{ $post->id }}">
+            <input type="hidden" value="{{ $post->id }}" name="id">
             <label for="exampleInputEmail1">Title</label>
             <input name="title" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                 placeholder="Enter email" value="{{ $post->title }}">

@@ -44,19 +44,23 @@ class PostController extends Controller
         Post::find($request['id'])->delete();
         return redirect()->back();
     }
-    public function showUpdate(Request $request)
+    public function showUpdate(Post $post)
+    {
+        $post = $post;
+        return view('updatePost', compact('post'));
+    }
+    public function updatePost(Request $request)
     {
         $request->validate([
             'content' => 'required',
             'title' => 'required'
         ]);
 
-        $post =  Post::find($request->id);
-        $post->content = $request->content;
+        $post = Post::find($request['id']);
+        $post->content = $request['content'];
         $post->title = $request->title;
-        $post->username = Auth::user()->username;
         $post->update();
 
-        return redirect()->route('/post');
+        return redirect('/post');
     }
 }
