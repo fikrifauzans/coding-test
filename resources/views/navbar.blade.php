@@ -28,7 +28,9 @@
                         @if (Auth::user()->role == 'admin')
                             <a class="dropdown-item" href="{{ url('/author') }}">Add Author</a>
                         @endif
-                        <a class="dropdown-item" href="{{ url('/author') }}">Logout</a>
+                        <form action="{{ url('/logout') }}" method="post">@csrf
+                            <button type="submit" class="dropdown-item" href="{{ url('/logout') }}">Logout</button>
+                        </form>
 
                         <div />
                 </li>

@@ -3,7 +3,7 @@
     <div class="container mt-5 ">
         <button class="btn btn-success my-3 btncreate">create post</button>
         @foreach ($post as $p)
-            <div class="card">
+            <div class="card mb-3">
                 <div class="card-header">
                     {{ $p->title }}
                 </div>

@@ -30,6 +30,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/post/update', [PostController::class, 'updatePost']);
     Route::get('/post/update/{post:id}', [PostController::class, 'showUpdate']);
     Route::post('/post/delete', [PostController::class, 'destroy']);
+    Route::post('/logout', [LoginController::class, 'logout']);
 });
 
 Route::middleware(['guest'])->group(function () {

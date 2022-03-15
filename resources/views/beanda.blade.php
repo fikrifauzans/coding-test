@@ -1,7 +1,7 @@
 @extends('home')
 @section('content')
     @foreach ($post as $p)
-        <div class="card">
+        <div class="card mb-3">
             <div class="card-header">
                 {{ $p->title }}
             </div>
